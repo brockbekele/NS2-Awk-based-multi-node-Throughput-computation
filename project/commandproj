@@ -1,0 +1,22 @@
+ns project.tcl
+
+
+awk -f Source.awk traceb.tr
+awk -f Destination.awk tracebr.tr
+
+set ylabel 'throughput (bps)'
+set xlabel 'Time (s)'
+
+plot "s1throu.tr" using 1:2 w lp title 'Flow1',
+     "s2throu.tr" using 1:($2/10) w lp title 'Flow2', 
+    
+
+plot "d1throughput.tr" using 1:2 w lp title 'Flow1', \
+     "d2throughput.tr" using 1:($2/10) w lp title 'Flow2', \
+     
+
+
+
+### Time_Packet.tr files contain the pair of time and throughput at a time.
+
+

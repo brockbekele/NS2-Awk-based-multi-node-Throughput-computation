@@ -1,0 +1,22 @@
+source 1 awk file
+awk '{if(($1=="r") &&( $3 == 0) && ($4 == 2) && ($9 == 0.0) && ($10 ==4.0))print $2,$6}' traceb.tr > Datasourc  
+awk -f through.awk datasourc > sourathr.tr
+
+
+source 2 awk file
+awk '{if(($1=="r") &&( $3 == 0) && ($4 == 2) && ($9 == 0.0) && ($10 ==4.0))print $2,$6}' traceb.tr > Datasourc2
+awk -f through.awk Datasourc2 . sourbthr.tr
+  
+awk '{if(($1=="r") &&( $3 == 1) && ($4 == 2) && ($9 == 1.0) && ($10 ==5.0))print $2,$6}' traceb.tr > Datasourc2  
+
+
+destination 2 awk file
+
+awk '{if(($1=="r") &&( $3 == 3) && ($4 == 5) && ($9 == 1.0) && ($10 ==5.0))print $2,$6}' traceb.tr > destin2data
+
+ awk -f through.awk destn2data > thrd1.tr
+
+destination 1 awk file 
+awk '{if(($1=="r") &&( $3 == 3) && ($4 == 4) && ($9 == 0.0) && ($10 ==4.0))print $2,$6}' traceb.tr > destin1data
+
+awk -f through.awk destin1data >thrd2.tr
