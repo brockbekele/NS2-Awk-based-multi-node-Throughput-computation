@@ -1,4 +1,4 @@
-#Calculation throughput Source link
+# #Calculation throughput Source link
 BEGIN {
 
 	timestart1 = 1.5;  timestart2 = 0.0;
